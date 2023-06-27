@@ -1,0 +1,62 @@
+---
+interface Props {
+	imagesUrls: Array<string>;
+}
+
+const { imagesUrls } = Astro.props;
+---
+
+<div class="marquee">
+	<div class="marquee">
+		<div
+			class="marquee-content"
+		>
+			{
+				imagesUrls.map((imageUrl) => (
+					<div class="carousel-item h-10">
+						<img src={imageUrl} />
+					</div>
+				))
+			}
+		</div>
+		<div
+			class="marquee-content" aria-hidden="true"
+		>
+			{
+				imagesUrls.map((imageUrl) => (
+					<div class="carousel-item h-10">
+						<img src={imageUrl} />
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>
+
+<style>
+	.marquee {
+		--gap: 1rem;
+		display: flex;
+		overflow: hidden;
+		user-select: none;
+		gap: var(--gap);
+	}
+
+	.marquee-content {
+		flex-shrink: 0;
+		display: flex;
+		justify-content: space-around;
+		min-width: 100%;
+		gap: var(--gap);
+		animation: scroll 5s linear infinite;
+	}
+
+	@keyframes scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(calc(-100% - var(--gap)));
+		}
+	}
+</style>
