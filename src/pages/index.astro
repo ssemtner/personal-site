@@ -1,26 +1,98 @@
 ---
-import Technologies from "../components/Technologies.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
+	<div class="navbar bg-base-300">
+		<div class="flex-1">
+			<a class="btn btn-ghost normal-case text-xl">Scott Semtner</a>
+		</div>
+		<div class="flex-none">
+			<ul class="menu menu-horizontal px-1">
+				<li><a>Experience</a></li>
+				<li><a>Projects</a></li>
+				<li><a>Education</a></li>
+				<li><a>Contact Me</a></li>
+			</ul>
+
+			<ThemeToggle />
+		</div>
+	</div>
+
+
+
+
 	<main>
-		<h1>Hi.</h1>
-		<h2>I'm Scott</h2>
-		<h3>Computer Science Student at UCSD</h3>
+		<div class="hero min-h-screen">
+			<div class="hero-content">
+				<div>
+					<h1 class="text-5xl font-bold">Hi.</h1>
+					<h1 class="text-6xl font-extrabold">
+						I'm <span class="text-7xl text-primary">Scott Semtner</span>
+					</h1>
+					<h1 class="text-4xl font-semibold">
+						Computer Science Student @ UCSD
+					</h1>
 
-		<section>Projects</section>
-		
+					<div class="flex-row my-8">
+						<a class="btn btn-primary me-4">Learn More</a><a
+							class="btn btn-primary"
+							href="mailto:scottsemtner@gmail.com">Contact Me</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section id="projects">
+			<div class="my-8 container mx-auto">
+				<h1 class="text-6xl font-bold my-4 text-purple-600">Projects</h1>
+
+				<div class="card w-96 bg-primary text-primary-content">
+					<div class="card-body">
+						<h2 class="card-title text-2xl">Check Yo Self</h2>
+						<p class="my-2">A website to showcase a collection of high school project and exhibit during covid.</p>
+						<div class="card-actions justify-end mt-2">
+							<button class="btn">View Site</button>
+							<button class="btn">Source Code</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<br />
+
+		<section id="experience">
+			<div class="my-8 container mx-auto">
+				<h1 class="text-6xl font-bold my-4 text-purple-600">Experience</h1>
+
+				<div class="ps-4">
+					<div class="flex flex-row justify-between">
+						<h2 class="text-3xl">Vivid-Hosting</h2>
+						<h2 class="text-xl">May 2022 - Present</h2>
+					</div>
+					<ul class="list-disc ps-8 text-xl">
+						<li>Test</li>
+						<li>Did this</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects">Projects</section>
+
 		<section>Experience</section>
-		
-		<section>Skills</section>
-		
-		<section>Education</section>
+		<p>Vivid-Hosting</p>
 
-		<Technologies
-			imagesUrls={new Array(10).fill(
-				"https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/800px-ISO_C%2B%2B_Logo.svg.png"
-			)}
-		/>
+		<section>Skills</section>
+
+		<section>Education</section>
+		<p>UCSD</p>
 	</main>
 </Layout>
+
+<script>
+
+</script>
