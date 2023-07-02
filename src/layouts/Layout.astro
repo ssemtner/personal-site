@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -18,5 +18,16 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+
+		<script is:inline>
+			if (localStorage.getItem("theme") === null) {
+				document.documentElement.setAttribute("data-theme", "dark");
+			} else {
+				document.documentElement.setAttribute(
+					"data-theme",
+					localStorage.getItem("theme")
+				);
+			}
+		</script>
 	</body>
 </html>

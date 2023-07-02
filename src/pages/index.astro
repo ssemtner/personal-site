@@ -1,12 +1,12 @@
 ---
-import ThemeToggle from "../components/ThemeToggle.astro";
+import ThemeToggle from "../components/ThemeToggle.jsx";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
 	<div class="navbar bg-base-300">
 		<div class="flex-1">
-			<a class="btn btn-ghost normal-case text-xl">Scott Semtner</a>
+			<span class="font-bold mx-4 normal-case text-2xl">Scott Semtner</span>
 		</div>
 		<div class="flex-none">
 			<ul class="menu menu-horizontal px-1">
@@ -16,12 +16,9 @@ import Layout from "../layouts/Layout.astro";
 				<li><a>Contact Me</a></li>
 			</ul>
 
-			<ThemeToggle />
+			<ThemeToggle client:load />
 		</div>
 	</div>
-
-
-
 
 	<main>
 		<div class="hero min-h-screen">
@@ -52,7 +49,10 @@ import Layout from "../layouts/Layout.astro";
 				<div class="card w-96 bg-primary text-primary-content">
 					<div class="card-body">
 						<h2 class="card-title text-2xl">Check Yo Self</h2>
-						<p class="my-2">A website to showcase a collection of high school project and exhibit during covid.</p>
+						<p class="my-2">
+							A website to showcase a collection of high school project and
+							exhibit during covid.
+						</p>
 						<div class="card-actions justify-end mt-2">
 							<button class="btn">View Site</button>
 							<button class="btn">Source Code</button>
@@ -93,6 +93,4 @@ import Layout from "../layouts/Layout.astro";
 	</main>
 </Layout>
 
-<script>
-
-</script>
+<script></script>
