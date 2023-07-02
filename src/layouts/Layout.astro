@@ -16,6 +16,17 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+	
+	<!-- Google tag (gtag.js) -->
+	<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PERPTJBKCE"></script>
+	<script is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-PERPTJBKCE');
+	</script>
+
 	<body>
 		<slot />
 
