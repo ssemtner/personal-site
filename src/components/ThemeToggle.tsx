@@ -9,12 +9,18 @@ const ThemeToggle = () => {
 
   const getFromLocalStorage = () => {
     const theme = localStorage.getItem("theme");
-    return theme ? theme : null;
+    return theme ? theme : "dark";
   };
 
   useEffect(() => {
     const localTheme = getFromLocalStorage();
     if (localTheme) {
+      if (localTheme !== "dark" && localTheme !== "light") {
+        setTheme("dark");
+        document.documentElement.dataset.theme = "dark";
+        saveToLocalStorage("dark");
+      }
+
       setTheme(localTheme as "light" | "dark");
       document.documentElement.dataset.theme = localTheme;
     }
