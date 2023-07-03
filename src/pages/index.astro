@@ -1,99 +1,116 @@
 ---
 import ContactForm from "../components/ContactForm";
-import ThemeToggle from "../components/ThemeToggle.jsx";
+import ProjectCard from "../components/ProjectCard.astro";
+import Technologies from "../components/Technologies.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<div class="navbar bg-base-300">
-		<div class="flex-1">
-			<span class="font-bold mx-4 normal-case text-2xl">Scott Semtner</span>
-		</div>
-		<div class="flex-none">
-			<ul class="menu menu-horizontal px-1">
-				<li><a>Experience</a></li>
-				<li><a>Projects</a></li>
-				<li><a>Education</a></li>
-				<li><a>Contact Me</a></li>
-			</ul>
+<Layout title="Scott Semtner">
+	<div class="hero min-h-screen">
+		<div class="hero-content">
+			<div>
+				<h1 class="text-5xl font-bold">Hi.</h1>
+				<h1 class="text-6xl font-extrabold">
+					I'm <span class="text-7xl text-primary">Scott Semtner</span>
+				</h1>
+				<h1 class="text-4xl font-semibold">Computer Science Student @ UCSD</h1>
 
-			<ThemeToggle client:load />
+				<div class="flex-row my-8">
+					<a class="btn btn-primary me-4" href="#technologies">Learn More</a>
+					<a class="btn btn-primary" href="#contact">Contact Me</a>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<main>
-		<div class="hero min-h-screen">
-			<div class="hero-content">
-				<div>
-					<h1 class="text-5xl font-bold">Hi.</h1>
-					<h1 class="text-6xl font-extrabold">
-						I'm <span class="text-7xl text-primary">Scott Semtner</span>
-					</h1>
-					<h1 class="text-4xl font-semibold">
-						Computer Science Student @ UCSD
-					</h1>
+	<Technologies />
 
-					<div class="flex-row my-8">
-						<a class="btn btn-primary me-4">Learn More</a><a
-							class="btn btn-primary"
-							href="mailto:scottsemtner@gmail.com">Contact Me</a
-						>
-					</div>
+	<div class="divider mx-16"></div>
+
+	<section id="experience" class="py-12 md:py-20 lg:py-32 flex justify-center">
+		<div class="container mx-4 p-2 md:p-8">
+			<h1 class="text-6xl font-bold my-4">Experience</h1>
+
+			<div class="ps-4 my-16">
+				<div class="flex flex-col md:flex-row justify-between mb-4">
+					<h2 class="text-3xl font-semibold">Vivid-Hosting</h2>
+					<h2 class="text-xl italic">Software Engineer</h2>
 				</div>
+				<ul class="list-disc ps-8 text-xl">
+					<li>Working on a web portal to manage hundreds of mobile proxies</li>
+					<li>Creating tools to monitor internal infrastructure</li>
+					<li>
+						Started as an intern, currently working part time during school
+					</li>
+				</ul>
 			</div>
 		</div>
+	</section>
 
-		<section id="projects">
-			<div class="my-8 container mx-auto">
-				<h1 class="text-6xl font-bold my-4 text-purple-600">Projects</h1>
+	<div class="divider mx-16"></div>
 
-				<div class="card w-96 bg-primary text-primary-content">
-					<div class="card-body">
-						<h2 class="card-title text-2xl">Check Yo Self</h2>
-						<p class="my-2">
-							A website to showcase a collection of high school project and
-							exhibit during covid.
-						</p>
-						<div class="card-actions justify-end mt-2">
-							<button class="btn">View Site</button>
-							<button class="btn">Source Code</button>
-						</div>
-					</div>
-				</div>
+	<section id="projects" class="py-12 md:py-20 lg:py-32 flex justify-center">
+		<div class="container mx-4 p-2 md:p-8">
+			<h1 class="text-6xl font-bold my-4">Projects</h1>
+
+			<div class="p-2">
+				<ProjectCard
+					title="Example Project"
+					description="This is an example project"
+					deploymentUrl="https://google.com"
+					sourceUrl="https://github.com"
+					tags={["React", "TailwindCSS", "Astro"]}
+				/>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<br />
+	<div class="divider mx-16"></div>
 
-		<section id="experience">
-			<div class="my-8 container mx-auto">
-				<h1 class="text-6xl font-bold my-4 text-purple-600">Experience</h1>
+	<section id="education" class="py-12 md:py-20 lg:py-32 flex justify-center">
+		<div class="container mx-4 p-2 md:p-8">
+			<h1 class="text-6xl font-bold my-4">Education</h1>
 
-				<div class="ps-4">
-					<div class="flex flex-row justify-between">
-						<h2 class="text-3xl">Vivid-Hosting</h2>
-						<h2 class="text-xl">May 2022 - Present</h2>
-					</div>
-					<ul class="list-disc ps-8 text-xl">
-						<li>Test</li>
-						<li>Did this</li>
-					</ul>
+			<div class="ps-4 my-16">
+				<div class="flex flex-col md:flex-row justify-between mb-4">
+					<h2 class="text-3xl font-semibold">UCSD</h2>
+					<h2 class="text-xl italic">Incoming First-Year Student</h2>
 				</div>
+				<ul class="list-disc ps-8 text-xl">
+					<li>Computer Science Major</li>
+					<li>Regents Scholar</li>
+				</ul>
 			</div>
-		</section>
 
-		<ContactForm client:visible />
+			<div class="ps-4 my-16">
+				<div class="flex flex-col md:flex-row justify-between mb-4">
+					<h2 class="text-3xl font-semibold">High Tech High Mesa</h2>
+					<h2 class="text-xl italic">2019 - 2023</h2>
+				</div>
+				<ul class="list-disc ps-8 text-xl">
+					<li>4.0 UW / 4.4 W</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 
-		<section id="projects">Projects</section>
+	<div class="divider mx-16"></div>
 
-		<section>Experience</section>
-		<p>Vivid-Hosting</p>
+	<section id="contact" class="py-12 md:py-20 lg:py-32 flex justify-center">
+		<div
+			class="container mx-4 bg-neutral rounded-xl p-2 md:p-8 shadow-md shadow-primary"
+		>
+			<h1
+				class="text-4xl md:text-6xl font-bold my-4 text-center md:text-left text-neutral-content"
+			>
+				Contact Me
+			</h1>
 
-		<section>Skills</section>
-
-		<section>Education</section>
-		<p>UCSD</p>
-	</main>
+			<div class="lg:mx-32 mx-4 my-8">
+				<ContactForm client:visible />
+			</div>
+		</div>
+	</section>
 </Layout>
 
 <script></script>

@@ -1,62 +1,60 @@
 ---
-interface Props {
-	imagesUrls: Array<string>;
-}
+import { Image } from "@astrojs/image/components";
 
-const { imagesUrls } = Astro.props;
+const images = [
+	{
+		name: "C++",
+		url: "/images/technologies/cpp.svg",
+	},
+	{
+		name: "JavaScript",
+		url: "/images/technologies/js.svg",
+	},
+	{
+		name: "TypeScript",
+		url: "/images/technologies/typescript.svg",
+	},
+	{
+		name: "Python",
+		url: "/images/technologies/python.svg",
+	},
+	{
+		name: "Flask",
+		url: "/images/technologies/flask.svg",
+	},
+	{
+		name: "React",
+		url: "/images/technologies/react.svg",
+	},
+	{
+		name: "Next.js",
+		url: "/images/technologies/next.svg",
+	},
+	{
+		name: "Astro",
+		url: "/images/technologies/astro.svg",
+	},
+];
 ---
 
-<div class="marquee">
-	<div class="marquee">
-		<div
-			class="marquee-content"
-		>
-			{
-				imagesUrls.map((imageUrl) => (
-					<div class="carousel-item h-10">
-						<img src={imageUrl} />
-					</div>
-				))
-			}
-		</div>
-		<div
-			class="marquee-content" aria-hidden="true"
-		>
-			{
-				imagesUrls.map((imageUrl) => (
-					<div class="carousel-item h-10">
-						<img src={imageUrl} />
-					</div>
-				))
-			}
-		</div>
+<section id="technologies" class="pt-16">
+	<div
+		class="flex justify-evenly overflow-x-scroll gap-8 bg-base-300 p-8 mb-16"
+	>
+		{
+			images.map((image) => (
+				<div class="tooltip tooltip-bottom tooltip-primary flex-shrink-0 select-none " data-tip={image.name}>
+					<Image
+						src={image.url}
+						alt={image.name}
+						format="svg"
+						width={64}
+						height={64}
+						class="scale-100"
+						draggable={false}
+					/>
+				</div>
+			))
+		}
 	</div>
-</div>
-
-<style>
-	.marquee {
-		--gap: 0;
-		display: flex;
-		overflow: hidden;
-		user-select: none;
-		gap: var(--gap);
-	}
-
-	.marquee-content {
-		flex-shrink: 0;
-		display: flex;
-		justify-content: space-around;
-		min-width: 100%;
-		gap: var(--gap);
-		animation: scroll 5s linear infinite;
-	}
-
-	@keyframes scroll {
-		from {
-			transform: translateX(0);
-		}
-		to {
-			transform: translateX(calc(-100% - var(--gap)));
-		}
-	}
-</style>
+</section>

@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from "../components/ThemeToggle";
+
 export interface Props {
 	title: string;
 }
@@ -12,23 +14,75 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	
+
 	<!-- Google tag (gtag.js) -->
-	<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-PERPTJBKCE"></script>
+	<script
+		is:inline
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-PERPTJBKCE"></script>
 	<script is:inline>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
 
-		gtag('config', 'G-PERPTJBKCE');
+		gtag("config", "G-PERPTJBKCE");
 	</script>
 
 	<body>
-		<slot />
+		<nav class="navbar bg-base-300 sticky top-0 z-50">
+			<div class="navbar-start flex-grow">
+				<div class="dropdown">
+					<label tabindex="0" class="btn btn-ghost lg:hidden">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-5 w-5"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M4 6h16M4 12h8m-8 6h16"></path>
+						</svg>
+					</label>
+					<ul
+						tabindex="0"
+						class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-300 rounded-box w-52"
+					>
+						<li><a href="#experience">Experience</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#education">Education</a></li>
+						<li><a href="#contact">Contact Me</a></li>
+					</ul>
+				</div>
+				<span class="font-bold mx-4 normal-case text-2xl">Scott Semtner</span>
+			</div>
+
+			<div class="navbar-end me-2">
+				<div class="hidden lg:flex">
+					<ul class="menu menu-horizontal px-1">
+						<li><a href="#experience">Experience</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#education">Education</a></li>
+						<li><a href="#contact">Contact Me</a></li>
+					</ul>
+				</div>
+
+				<ThemeToggle client:load />
+			</div>
+		</nav>
+
+		<main class="relative">
+			<slot />
+		</main>
 
 		<script is:inline>
 			if (localStorage.getItem("theme") === null) {
@@ -42,3 +96,15 @@ const { title } = Astro.props;
 		</script>
 	</body>
 </html>
+
+<style>
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		:global(html) {
+			scroll-behavior: auto;
+		}
+	}
+</style>

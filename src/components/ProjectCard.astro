@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  deploymentUrl?: string;
+  sourceUrl: string;
+  tags?: string[];
+  image?: {
+    url: string;
+    alt: string;
+  };
+}
+
+const { title, description, deploymentUrl, sourceUrl, tags, image } =
+  Astro.props;
+---
+
+<div
+  class="card max-w-sm bg-primary text-primary-content mt-24 card-compact md:card-normal"
+>
+  <div class="card-body">
+    <h2 class="card-title text-2xl">{title}</h2>
+    <p class="my-2">
+      {description}
+    </p>
+    <div class="card-actions flex-col items-end mt-2">
+      <div>
+        {
+          deploymentUrl && (
+            <a
+              class="btn btn-sm md:btn-md m-1"
+              href={deploymentUrl}
+              target="_blank"
+            >
+              View Site
+            </a>
+          )
+        }
+        <a class="btn btn-sm md:btn-md m-1" href={sourceUrl} target="_blank">
+          Source Code
+        </a>
+      </div>
+
+      {
+        tags && (
+          <div>
+            {tags.map((tag) => (
+              <div class="badge badge-outline m-1">{tag}</div>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</div>
