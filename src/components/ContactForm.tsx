@@ -63,7 +63,7 @@ const ContactForm = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-12 h-12 text-success"
+            className="h-12 w-12 text-success"
           >
             <path
               strokeLinecap="round"
@@ -81,7 +81,7 @@ const ContactForm = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-12 h-12 text-error"
+            className="h-12 w-12 text-error"
           >
             <path
               strokeLinecap="round"
@@ -102,10 +102,14 @@ const ContactForm = () => {
           </p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="form-control" autoComplete="off">
+        <form
+          onSubmit={handleSubmit}
+          className="form-control"
+          autoComplete="off"
+        >
           <input
             placeholder="Your Name"
-            className="input input-bordered input-primary bg-neutral-focus w-full join-item my-4"
+            className="input-bordered input-primary input join-item my-4 w-full bg-neutral-focus"
             type="text"
             required
             onChange={(e) => {
@@ -114,7 +118,7 @@ const ContactForm = () => {
           />
           <input
             placeholder="Your Email"
-            className="input input-bordered input-primary bg-neutral-focus w-full mb-4"
+            className="input-bordered input-primary input mb-4 w-full bg-neutral-focus"
             type="email"
             required
             onChange={(e) => {
@@ -126,7 +130,7 @@ const ContactForm = () => {
           />
           <textarea
             placeholder="Your Message"
-            className="textarea textarea-primary mb-4 bg-neutral-focus resize-none"
+            className="textarea-primary textarea mb-4 resize-none bg-neutral-focus"
             cols={30}
             rows={10}
             required
@@ -137,7 +141,7 @@ const ContactForm = () => {
               });
             }}
           ></textarea>
-          <button className="btn w-full btn-primary" type="submit">
+          <button className="btn-primary btn w-full" type="submit">
             Send
           </button>
         </form>

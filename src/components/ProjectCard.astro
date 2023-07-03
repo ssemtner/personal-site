@@ -24,22 +24,22 @@ const {
 ---
 
 <div
-  class="card max-w-sm w-96 bg-primary text-primary-content mt-24 card-compact md:card-normal"
+  class="card card-compact mt-24 w-96 max-w-sm bg-primary text-primary-content md:card-normal"
 >
   <div class="card-body">
     <h2 class="card-title text-2xl">{title}</h2>
     <p class="my-2">
       {description}
     </p>
-    <div class="card-actions flex-col items-end mt-2">
+    <div class="card-actions mt-2 flex-col items-end">
       {
         deploymentUrl && (
-          <a class="btn btn-sm md:btn-md" href={deploymentUrl} target="_blank">
+          <a class="btn-sm btn md:btn-md" href={deploymentUrl} target="_blank">
             {deploymentUrlLabel ?? "View Site"}
           </a>
         )
       }
-      <a class="btn btn-sm md:btn-md" href={sourceUrl} target="_blank">
+      <a class="btn-sm btn md:btn-md" href={sourceUrl} target="_blank">
         Source Code
       </a>
 

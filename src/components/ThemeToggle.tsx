@@ -30,7 +30,7 @@ const ThemeToggle = () => {
     <button
       data-toggle-theme="dark,light"
       data-act-class="show-selected"
-      className="btn theme-toggle-btn transform transition"
+      className="theme-toggle-btn btn transform transition"
       onClick={() => {
         if (theme === "light") {
           setTheme("dark");
@@ -50,7 +50,7 @@ const ThemeToggle = () => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="h-6 w-6"
         >
           <path
             strokeLinecap="round"
@@ -65,7 +65,7 @@ const ThemeToggle = () => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="h-6 w-6"
         >
           <path
             strokeLinecap="round"

@@ -15,9 +15,9 @@ import Layout from "../layouts/Layout.astro";
 				</h1>
 				<h1 class="text-4xl font-semibold">Computer Science Student @ UCSD</h1>
 
-				<div class="flex-row my-8">
-					<a class="btn btn-primary me-4" href="#technologies">Learn More</a>
-					<a class="btn btn-primary" href="#contact">Contact Me</a>
+				<div class="my-8 flex-row">
+					<a class="btn-primary btn me-4" href="#technologies">Learn More</a>
+					<a class="btn-primary btn" href="#contact">Contact Me</a>
 				</div>
 			</div>
 		</div>
@@ -27,12 +27,12 @@ import Layout from "../layouts/Layout.astro";
 
 	<div class="divider mx-16"></div>
 
-	<section id="experience" class="py-12 md:py-20 lg:py-32 flex justify-center">
+	<section id="experience" class="flex justify-center py-12 md:py-20 lg:py-32">
 		<div class="container mx-4 p-2 md:p-8">
-			<h1 class="text-6xl font-bold my-4">Experience</h1>
+			<h1 class="my-4 text-6xl font-bold">Experience</h1>
 
-			<div class="ps-4 my-16">
-				<div class="flex flex-col md:flex-row justify-between mb-4">
+			<div class="my-16 ps-4">
+				<div class="mb-4 flex flex-col justify-between md:flex-row">
 					<h2 class="text-3xl font-semibold">Vivid-Hosting</h2>
 					<h2 class="text-xl italic">Software Engineer</h2>
 				</div>
@@ -49,11 +49,11 @@ import Layout from "../layouts/Layout.astro";
 
 	<div class="divider mx-16"></div>
 
-	<section id="projects" class="py-12 md:py-20 lg:py-32 flex justify-center">
+	<section id="projects" class="flex justify-center py-12 md:py-20 lg:py-32">
 		<div class="container mx-4 p-2 md:p-8">
-			<h1 class="text-6xl font-bold my-4">Projects</h1>
+			<h1 class="my-4 text-6xl font-bold">Projects</h1>
 
-			<div class="p-2 flex flex-wrap gap-8 justify-between">
+			<div class="flex flex-wrap justify-between gap-8 p-2">
 				<ProjectCard
 					title="Robotics Team Code"
 					description="I heavily contributed to my high school robotic's teams code."
@@ -75,12 +75,12 @@ import Layout from "../layouts/Layout.astro";
 
 	<div class="divider mx-16"></div>
 
-	<section id="education" class="py-12 md:py-20 lg:py-32 flex justify-center">
+	<section id="education" class="flex justify-center py-12 md:py-20 lg:py-32">
 		<div class="container mx-4 p-2 md:p-8">
-			<h1 class="text-6xl font-bold my-4">Education</h1>
+			<h1 class="my-4 text-6xl font-bold">Education</h1>
 
-			<div class="ps-4 my-16">
-				<div class="flex flex-col md:flex-row justify-between mb-4">
+			<div class="my-16 ps-4">
+				<div class="mb-4 flex flex-col justify-between md:flex-row">
 					<h2 class="text-3xl font-semibold">UCSD</h2>
 					<h2 class="text-xl italic">Incoming First-Year Student</h2>
 				</div>
@@ -90,8 +90,8 @@ import Layout from "../layouts/Layout.astro";
 				</ul>
 			</div>
 
-			<div class="ps-4 my-16">
-				<div class="flex flex-col md:flex-row justify-between mb-4">
+			<div class="my-16 ps-4">
+				<div class="mb-4 flex flex-col justify-between md:flex-row">
 					<h2 class="text-3xl font-semibold">High Tech High Mesa</h2>
 					<h2 class="text-xl italic">2019 - 2023</h2>
 				</div>
@@ -104,17 +104,17 @@ import Layout from "../layouts/Layout.astro";
 
 	<div class="divider mx-16"></div>
 
-	<section id="contact" class="py-12 md:py-20 lg:py-32 flex justify-center">
+	<section id="contact" class="flex justify-center py-12 md:py-20 lg:py-32">
 		<div
-			class="container mx-4 bg-neutral rounded-xl p-2 md:p-8 shadow-md shadow-primary"
+			class="container mx-4 rounded-xl bg-neutral p-2 shadow-md shadow-primary md:p-8"
 		>
 			<h1
-				class="text-4xl md:text-6xl font-bold my-4 text-center md:text-left text-neutral-content"
+				class="my-4 text-center text-4xl font-bold text-neutral-content md:text-left md:text-6xl"
 			>
 				Contact Me
 			</h1>
 
-			<div class="lg:mx-32 mx-4 my-8">
+			<div class="mx-4 my-8 lg:mx-32">
 				<ContactForm client:visible />
 			</div>
 		</div>

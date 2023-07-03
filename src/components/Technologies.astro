@@ -39,11 +39,14 @@ const images = [
 
 <section id="technologies" class="pt-16">
 	<div
-		class="flex justify-evenly overflow-x-scroll gap-8 bg-base-300 p-8 mb-16"
+		class="mb-16 flex flex-wrap-reverse content-evenly justify-evenly gap-8 bg-base-300 p-8"
 	>
 		{
 			images.map((image) => (
-				<div class="tooltip tooltip-bottom tooltip-primary flex-shrink-0 select-none " data-tip={image.name}>
+				<div
+					class="tooltip-primary tooltip tooltip-bottom flex-shrink-0 select-none "
+					data-tip={image.name}
+				>
 					<Image
 						src={image.url}
 						alt={image.name}
