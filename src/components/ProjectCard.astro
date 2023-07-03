@@ -3,6 +3,7 @@ interface Props {
   title: string;
   description: string;
   deploymentUrl?: string;
+  deploymentUrlLabel?: string;
   sourceUrl: string;
   tags?: string[];
   image?: {
@@ -11,12 +12,19 @@ interface Props {
   };
 }
 
-const { title, description, deploymentUrl, sourceUrl, tags, image } =
-  Astro.props;
+const {
+  title,
+  description,
+  deploymentUrl,
+  deploymentUrlLabel,
+  sourceUrl,
+  tags,
+  image,
+} = Astro.props;
 ---
 
 <div
-  class="card max-w-sm bg-primary text-primary-content mt-24 card-compact md:card-normal"
+  class="card max-w-sm w-96 bg-primary text-primary-content mt-24 card-compact md:card-normal"
 >
   <div class="card-body">
     <h2 class="card-title text-2xl">{title}</h2>
@@ -24,22 +32,16 @@ const { title, description, deploymentUrl, sourceUrl, tags, image } =
       {description}
     </p>
     <div class="card-actions flex-col items-end mt-2">
-      <div>
-        {
-          deploymentUrl && (
-            <a
-              class="btn btn-sm md:btn-md m-1"
-              href={deploymentUrl}
-              target="_blank"
-            >
-              View Site
-            </a>
-          )
-        }
-        <a class="btn btn-sm md:btn-md m-1" href={sourceUrl} target="_blank">
-          Source Code
-        </a>
-      </div>
+      {
+        deploymentUrl && (
+          <a class="btn btn-sm md:btn-md" href={deploymentUrl} target="_blank">
+            {deploymentUrlLabel ?? "View Site"}
+          </a>
+        )
+      }
+      <a class="btn btn-sm md:btn-md" href={sourceUrl} target="_blank">
+        Source Code
+      </a>
 
       {
         tags && (

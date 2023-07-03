@@ -53,13 +53,21 @@ import Layout from "../layouts/Layout.astro";
 		<div class="container mx-4 p-2 md:p-8">
 			<h1 class="text-6xl font-bold my-4">Projects</h1>
 
-			<div class="p-2">
+			<div class="p-2 flex flex-wrap gap-8 justify-between">
 				<ProjectCard
-					title="Example Project"
-					description="This is an example project"
-					deploymentUrl="https://google.com"
-					sourceUrl="https://github.com"
-					tags={["React", "TailwindCSS", "Astro"]}
+					title="Robotics Team Code"
+					description="I heavily contributed to my high school robotic's teams code."
+					deploymentUrl="https://team1538.com/site/rapidreach/"
+					deploymentUrlLabel="Robot Showcase"
+					sourceUrl="https://github.com/theholycows/1538_2023"
+					tags={["C++", "WPILib", "FRC"]}
+				/>
+				<ProjectCard
+					title="Personal Site"
+					description="The site you're on right now!"
+					deploymentUrl="https://scottsemtner.com"
+					sourceUrl="https://github.com/ssemtner/personal-site"
+					tags={["Astro", "TailwindCSS", "Astro"]}
 				/>
 			</div>
 		</div>
