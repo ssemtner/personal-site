@@ -1,3 +1,4 @@
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
 const ContactForm = () => {
@@ -57,38 +58,12 @@ const ContactForm = () => {
         </div>
       ) : status === "success" ? (
         <div className="flex flex-col items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="h-12 w-12 text-success"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
+          <CheckCircleIcon className="h-12 w-12 text-success" />
           <p className="text-2xl">Message Sent!</p>
         </div>
       ) : status === "failure" ? (
         <div className="flex flex-col items-center gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="h-12 w-12 text-error"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
+          <XCircleIcon className="h-12 w-12 text-error" />
           <h2 className="text-2xl">Something went wrong.</h2>
           <p className="text-xl">
             Try again later or email me directly at:{" "}
