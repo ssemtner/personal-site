@@ -34,19 +34,19 @@ const {
     <div class="card-actions mt-2 flex-col items-end">
       {
         deploymentUrl && (
-          <a class="btn-sm btn md:btn-md" href={deploymentUrl} target="_blank">
+          <a class="btn-sm btn btn-neutral md:btn-md" href={deploymentUrl} target="_blank">
             {deploymentUrlLabel ?? "View Site"}
           </a>
         )
       }
-      <a class="btn-sm btn md:btn-md" href={sourceUrl} target="_blank">
+      <a class="btn-sm btn btn-neutral md:btn-md" href={sourceUrl} target="_blank">
         Source Code
       </a>
 
       {
         tags && (
           <div>
-            {tags.map((tag) => (
+            {tags.map((tag: string) => (
               <div class="badge badge-outline m-1">{tag}</div>
             ))}
           </div>
