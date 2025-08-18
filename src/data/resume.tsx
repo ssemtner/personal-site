@@ -48,7 +48,7 @@ export const DATA = {
 
         navbar: true,
       },
-      email: {
+      Email: {
         name: "Send Email",
         url: "mailto:scottsemtner@gmail.com",
         icon: Icons.email,
@@ -69,7 +69,7 @@ export const DATA = {
       start: "May 2023",
       end: "Present",
       description:
-        "Developing backend systems and infrastructure for various hosting and cybersecurity solutions. Built radio configuration tools for FIRST Robotics competitions and modernized container orchestration infrastructure. Work with Go, Python, React, Kubernetes, and embedded systems programming for mission-critical applications.",
+        "Developing backend systems and infrastructure for various cybersecurity solutions. Built radio configuration tools for FIRST Robotics competitions serving 83,000+ students and migrated legacy infrastructure to Kubernetes. Working with Go, Python, React, and embedded systems for mission-critical applications.",
     },
     {
       company: "ACM AI at UC San Diego",
@@ -81,7 +81,7 @@ export const DATA = {
       start: "May 2024",
       end: "Present",
       description:
-        "Lead development team building platform infrastructure for UC San Diego's largest computing organization. Architect and develop AI competition platforms, manage technical projects using Agile methodology, and coordinate with organization leadership on technical initiatives.",
+        "Leading a team of 5 developers building platform infrastructure for UC San Diego's largest computing organization. Built AI competition platforms supporting 200+ participants and coordinate with leadership to design engaging technical challenges using modern ML techniques.",
     },
     {
       company: "FIRST Robotics Team 1538",
@@ -93,7 +93,7 @@ export const DATA = {
       start: "Sep 2020",
       end: "Jun 2023",
       description:
-        "Led software development for competitive robotics team, achieving top global rankings. Developed autonomous navigation systems, custom control algorithms, and real-time embedded software in C++. Won multiple engineering awards at world-level competitions.",
+        "Led software development for competitive robotics team that ranked 16th globally out of 3,000+ teams. Developed autonomous navigation systems, swerve drive kinematics, and real-time motion control in C++. Team won Quality Award at World Championship and multiple engineering awards.",
     },
   ],
   education: [
