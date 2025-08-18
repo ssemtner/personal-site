@@ -145,6 +145,7 @@ export const DATA = {
     },
     {
       title: "Custom RISC Processor Design",
+      href: "javascript:void(0)",
       dates: "Apr 2025 - Jun 2025",
       active: true,
       description:
