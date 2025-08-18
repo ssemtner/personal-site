@@ -66,8 +66,8 @@ export const DATA = {
       location: "Los Angeles, CA (Hybrid)",
       title: "Software Engineer Intern",
       logoUrl: "/vh.svg",
-      start: "May 2021",
-      end: "Oct 2022",
+      start: "May 2023",
+      end: "Present",
       description:
         "Developing backend systems and infrastructure for various hosting and cybersecurity solutions. Built radio configuration tools for FIRST Robotics competitions and modernized container orchestration infrastructure. Work with Go, Python, React, Kubernetes, and embedded systems programming for mission-critical applications.",
     },
