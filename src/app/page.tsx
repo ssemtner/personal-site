@@ -32,8 +32,8 @@ export default function Page() {
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
+                {/*<AvatarImage alt={DATA.name} src={DATA.avatarUrl} />*/}
+                <AvatarFallback className="text-4xl bg-purple-200 dark:bg-purple-800">{DATA.initials}</AvatarFallback>
               </Avatar>
             </BlurFade>
           </div>
