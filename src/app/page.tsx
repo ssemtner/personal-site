@@ -33,7 +33,9 @@ export default function Page() {
             <BlurFade delay={BLUR_FADE_DELAY}>
               <Avatar className="size-28 border">
                 {/*<AvatarImage alt={DATA.name} src={DATA.avatarUrl} />*/}
-                <AvatarFallback className="text-4xl bg-purple-200 dark:bg-purple-800">{DATA.initials}</AvatarFallback>
+                <AvatarFallback className="text-4xl bg-purple-200 dark:bg-purple-800">
+                  {DATA.initials}
+                </AvatarFallback>
               </Avatar>
             </BlurFade>
           </div>
@@ -221,6 +223,23 @@ export default function Page() {
                 </Link>{" "}
                 and I&apos;ll be sure to respond.
               </p>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
+      <section id="contact">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full pb-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
+            <div className="space-y-3">
+              <div className="space-x-2 mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <Link href="https://kytrinh.me/gathering/ssemtner/previous">
+                  &larr;
+                </Link>
+                <Link href="https://kytrinh.me/gathering">gathering</Link>
+                <Link href="https://kytrinh.me/gathering/ssemtner/next">
+                  &rarr;
+                </Link>
+              </div>
             </div>
           </BlurFade>
         </div>
